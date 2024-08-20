@@ -45,7 +45,7 @@ const App =() =>{
 
   return(
   <main className="flex flex-col">
-    <ul className=" w-full mt-10 border">
+    <ul className=" w-full mt-10 ">
     
       { 
       friend.map(friend => {

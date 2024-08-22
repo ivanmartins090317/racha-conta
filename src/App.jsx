@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { ListOfFriends } from "./components/list-of-friend";
-
+import { ButtonShowForm } from "./components/button-show-form";
 
 const initalFriends = [
   {id: crypto.randomUUID(), name: 'John', balance: 0, image:"https://randomuser.me/api/portraits/men/1.jpg"},
   {id: crypto.randomUUID(), name: 'Johane', balance: 0, image:"https://randomuser.me/api/portraits/men/14.jpg"},
   {id: crypto.randomUUID(), name: 'Elisa', balance: 0, image:"https://randomuser.me/api/portraits/men/2.jpg"}
 ];
+
 
 
 
@@ -64,13 +65,11 @@ const App =() =>{
        selectedFriend={selectedFriend}
        onClickFriend={handleClickFriend}
       />
-       <button  
-          onClick={handleClickShowForm} 
-          className={`mt-5 flex w-80 justify-center rounded-md  px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 m-auto ${showFormAddFriends ? "bg-gray-500" : "bg-indigo-500" }`}
-        >
-          {showFormAddFriends ? "Fechar" : "Adicionar amigo"}
-        </button>
-    
+      
+     <ButtonShowForm
+      onClickShowForm={handleClickShowForm}
+      showFormAddFriends={showFormAddFriends}
+     />
      { showFormAddFriends &&  <div className="flex w-full flex-col justify-center items-center">
 
           <div className="mt-10 sm:mx-auto w-8/12 flex flex-col items-center justify-center">
@@ -87,7 +86,7 @@ const App =() =>{
                 onChange={handleClickNamefriend}
                   id="nome"
                   name="nome"
-                  type="sting"
+                  type="string"
                   required
                   autoComplete="nome"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"

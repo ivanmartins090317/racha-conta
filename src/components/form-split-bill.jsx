@@ -27,7 +27,7 @@ const FormSplitBill = ({
       setWhoWillPay('você')
   }
 
-  return  selectedFriend && <div className="flex w-full flex-col justify-center items-center">
+  return  selectedFriend && <div className="flex w-full flex-col justify-center items-center mb-9">
 
           <div className="mt-10 sm:mx-auto w-8/12 ">
             <form onSubmit={handleSubmitShareBill} className="space-y-6  w-full" >
@@ -53,10 +53,10 @@ const FormSplitBill = ({
         </div>
 
         {/* Select do Tailwind */}
-      <label>Quem paga?
-        <select onChange={handleWhoWillPay} className="flex flex-col border rounded-md font-bold">
-          <option value="Você">Você</option>
-          <option value={selectedFriend.name}>{selectedFriend.name}</option>
+      <label className="font-bold mb-6">Quem paga?
+        <select onChange={handleWhoWillPay} className="flex flex-col border rounded-md font-bold mt-3 ">
+          <option className="text-xs p-4" value="Você">Você</option>
+          <option className="text-xs p-4" value={selectedFriend.name}>{selectedFriend.name}</option>
         </select>
       </label>
 

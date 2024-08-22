@@ -18,12 +18,7 @@ const App =() =>{
   const [friend, setfriend] = useState(initalFriends)
   const [showFormAddFriends, setShowFormAddFriends] = useState(false)
  
-  
-  const handleClickShowForm = () => setShowFormAddFriends(b => !b)
-  
-  
-
- 
+  const handleClickShowForm = () => setShowFormAddFriends(b => !b) 
   const handleSubmitAddFriend = newFriend =>{
     setfriend(prev =>[...prev, newFriend])
     setShowFormAddFriends(false)
@@ -38,6 +33,7 @@ const App =() =>{
 
   return(
   <main className="flex flex-col">
+    <h2 className="mt-3 text-center font-bold">Racha a conta</h2>
       <ListOfFriends 
        friend={friend}
        selectedFriend={selectedFriend}

@@ -18,7 +18,7 @@ const ListOfFriends = ({friend, selectedFriend, onClickFriend}) =>{
         return (
 
               <>
-                  <li className="border w-full rounded-md flex justify-between px-6 items-center mb-4">
+                  <li className="border w-full rounded-md flex justify-between px-6 items-center mb-4 p-5">
                     <div className="flex space-x-3 mr-46 ">
                         <img src={friend.image} alt={friend.name} className="w-16 h-16 rounded-full"/>
                       <div className="mr-30">
